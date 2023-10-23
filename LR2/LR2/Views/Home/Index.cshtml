@@ -1,0 +1,41 @@
+﻿@model LR2.Model.CompanyModel
+
+@{
+    ViewData["Title"] = "Company List";
+}
+
+<h2>Company List</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Company</th>
+            <th>Employees</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.CompanyList) {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Employees</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h2>Company with Most Employees</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Company</th>
+            <th>Employees</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.CompanyWithMostEmployees.Name</td>
+            <td>@Model.CompanyWithMostEmployees.Employees</td>
+        </tr>
+    </tbody>
+</table>
